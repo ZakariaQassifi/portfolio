@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakaria Qassifi | Portfolio</title>
+  <meta name="description" content="Official portfolio of Zakaria Qassifi, Computer Engineering and Artificial Intelligence student. Explore projects, skills, and software solutions.">
+  <meta name="keywords" content="Zakaria Qassifi, Zakaria Qassifi portfolio, Software Engineer Khouribga, AI Engineer Morocco">
+  <meta name="author" content="Zakaria Qassifi">
+  <meta property="og:title" content="Zakaria Qassifi | Portfolio">
+  <meta property="og:description" content="Personal Portfolio of Zakaria Qassifi - Computer Engineering & AI">
+  <meta property="og:type" content="website">
+
+  <meta name="google-site-verification" content="wrl9LnjPeG0ZuHrEyC_FTb8FSvQhZhtLSdkt9wJUU6w"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="logo/ZQlogo.svg">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="Zakaria Qassifi — back to top">
+      <img src="logo/newZQ.png" alt="" class="logo-img">
+      <span class="logo-text">ZAKARIA<span class="logo-dot">.</span>QASSIFI</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-btns">
+      <a href="https://github.com/ZakariaQassifi" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/zakaria-qassifi-87874b286/" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        LinkedIn
+      </a>
+      <button type="button" class="btn btn-accent" onclick="openCVModal(this)">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l2.5-2.5-1.42-1.41L11 14.17V4h-2v10.17l-2.08-2.08L5.5 13.5 10 18l2 2 2-2zm9-4h-2v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7z"/></svg>
+        View CV
+      </button>
+
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <span class="sr-only">Toggle light / dark theme</span>
+          <input type="checkbox" id="checkbox" class="theme-switch-input">
+          <span class="slider">
+            <span class="slider-icon sun-icon" aria-hidden="true">☀</span>
+            <span class="slider-icon moon-icon" aria-hidden="true">☾</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="label cmd-prompt"># whoami<span class="label-cursor">_</span></p>
+          <h1>
+            Building <span class="hl-marker">intelligent</span> systems &amp; software solutions.
+          </h1>
+          <p class="hero-lead">
+            Hi, I'm <strong class="name-sticker">Zakaria Qassifi</strong> — computer engineering &amp; AI student
+            passionate about object-oriented architecture and practical, terminal-native
+            software engineering.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://drive.google.com/file/d/1d2JrkwEzrgoBTX2S1y0DBKIte9YKmWaO/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-accent btn-lg">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+              Download CV
+            </a>
+            <a href="https://github.com/ZakariaQassifi" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/zakaria-qassifi-87874b286/" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+
+          <ul class="hero-stats" aria-label="Quick facts">
+            <li><span class="stat-dot" aria-hidden="true"></span> Open to work</li>
+            <li>Licence GI &amp; IA — 2023+</li>
+            <li>Khouribga, MA</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="terminal-window hero-portrait">
+            <div class="terminal-head">
+              <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+              <span class="window-title">zakaria.svg — preview</span>
+            </div>
+            <div class="terminal-body">
+              <img src="pic/dexter.png" alt="Dexter cartoon avatar of Zakaria Qassifi" class="portrait">
+              <figcaption class="portrait-meta">::computer_engineering::<br>::artificial_intelligence::</figcaption>
+            </div>
+            <span class="sticker sticker-green">10</span>
+            <span class="sticker sticker-blue">AI FIRST</span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>OOP</span><i></i><span>AI</span><i></i><span>PYTHON</span><i></i><span>C++</span><i></i><span>JS</span><i></i><span>ALGORITHMS</span><i></i><span>GIT</span><i></i><span>QT</span><i></i><span>SQL</span><i></i><span>TERMINAL-NATIVE</span><i></i>
+        <span>OOP</span><i></i><span>AI</span><i></i><span>PYTHON</span><i></i><span>C++</span><i></i><span>JS</span><i></i><span>ALGORITHMS</span><i></i><span>GIT</span><i></i><span>QT</span><i></i><span>SQL</span><i></i><span>TERMINAL-NATIVE</span><i></i>
+      </div>
+    </div>
+
+    <!-- ABOUT / EDUCATION -->
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <p class="label cmd-prompt">// 01 :: cat education.md</p>
+        <h2>Academic profile</h2>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">licence_gienie.md</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Licence en Génie Informatique et Intelligence Artificielle</h3>
+            <p class="meta-line">Faculté Polydisciplinaire de Khouribga → 2023 – Present</p>
+            <p>Advanced computer-science engineering principles, artificial-intelligence systems, database architecture, and object-oriented programming.</p>
+            <div class="tags">
+              <span class="tag">Engineering</span>
+              <span class="tag">AI</span>
+              <span class="tag">Databases</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">bac_physics.md</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Baccalauréat Sciences Physiques</h3>
+            <p class="meta-line">Graduated → 2022 – 2023</p>
+            <p>Strong foundation in analytical mathematics, physical sciences, logical reasoning, and problem-solving methodologies.</p>
+            <div class="tags">
+              <span class="tag">Math</span>
+              <span class="tag">Physics</span>
+              <span class="tag">Logic</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <div class="section-head">
+        <p class="label cmd-prompt">// 02 :: cat roles.log</p>
+        <h2>Activities &amp; roles</h2>
+      </div>
+
+      <div class="grid grid-2">
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">alkhawarizmi.club</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Vice-Président</h3>
+            <p class="meta-line">Al Khawarizmi IT &amp; Robotics Club</p>
+            <ul class="check-list">
+              <li>Organized key technology and robotics workshops and academic events.</li>
+              <li>Managed strategic communication channels and organizational partnerships.</li>
+              <li>Co-coordinated hackathons and student tech events.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">hackathon_2026.log</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Hackathon Vibe Coding 2026</h3>
+            <p class="meta-line">Organizer &amp; Event Facilitator</p>
+            <ul class="check-list">
+              <li>Participated actively in the organization and public communication strategy.</li>
+              <li>Contributed to securing event sponsorships and academic partnerships.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <div class="section-head">
+        <p class="label cmd-prompt">// 03 :: ls -l ./projects/</p>
+        <h2>Engineering works</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">hotel_app.py</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Hotel Management App</h3>
+            <p class="meta-line">Python</p>
+            <p>Software application designed to streamline hotel operations, handle room availability, guest bookings, and customer databases.</p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Database</span><span class="tag">Software</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">smart_scheduler.cpp</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Smart Planning Assistant</h3>
+            <p class="meta-line">C++ / Algorithms</p>
+            <p>An intelligent scheduling assistant prioritizing tasks and optimizing personal workflow using custom algorithm structures and OOP principles.</p>
+            <div class="tags">
+              <span class="tag">C++</span><span class="tag">OOP</span><span class="tag">Algorithms</span><span class="tag">Qt</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">portfolio_site.html</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Personal Portfolio Web App</h3>
+            <p class="meta-line">HTML / CSS / JS</p>
+            <p>Interactive web portfolio built to present academic projects, research reports, and engineering software works.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">UI/UX</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">todo_app.js</span>
+          </div>
+          <div class="terminal-body">
+            <h3>My To-Do List Web App</h3>
+            <p class="meta-line">HTML / CSS / JS</p>
+            <p>A clean, intuitive experience to organize daily tasks quickly — without unnecessary complexity.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag tag-link"><a href="https://zakariaqassifi.github.io/my-To-Do-List/" target="_blank" rel="noopener" class="btn-live">Live demo ↗</a></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <div class="section-head">
+        <p class="label cmd-prompt">// 04 :: neofetch --skills</p>
+        <h2>Skills &amp; capabilities</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">programming.json</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Programming</h3>
+            <div class="tags">
+              <span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">core_concepts.env</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Technologies</h3>
+            <div class="tags">
+              <span class="tag">Artificial Intelligence</span><span class="tag">Algorithms</span><span class="tag">OOP Paradigm</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="terminal-window card">
+          <div class="terminal-head">
+            <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+            <span class="window-title">tools.config</span>
+          </div>
+          <div class="terminal-body">
+            <h3>Tools &amp; Languages</h3>
+            <div class="tags">
+              <span class="tag">GitHub</span><span class="tag">VS Code</span><span class="tag">Canva</span><span class="tag">Arabic</span><span class="tag">English</span><span class="tag">French</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / ZEXTER -->
+    <section id="contact" class="reveal">
+      <div class="section-head">
+        <p class="label cmd-prompt">// 05 :: init --bot zexter</p>
+        <h2>Contact terminal</h2>
+      </div>
+
+      <div class="terminal-window contact-terminal">
+        <div class="terminal-head">
+          <span class="dots" aria-hidden="true"><i class="dot dot-red"></i><i class="dot dot-yellow"></i><i class="dot dot-green"></i></span>
+          <span class="window-title">zexter — chat interface</span>
+        </div>
+
+        <div class="terminal-body chat-wrapper">
+          <div id="zexter-chat" class="chat-container" aria-live="polite">
+            <div class="chat-message msg-bot">
+              <p class="msg-head"><span class="msg-prefix">zexter@ai</span><span class="msg-time">[INIT]</span></p>
+              <div class="msg-content">
+                <p><strong class="term-user">Hello! I'm Zexter 🤖</strong></p>
+                <p class="term-desc">I help Zakaria connect with you. Ask me anything.</p>
+                <ul class="contact-quicklist">
+                  <li><span aria-hidden="true">→</span> Email: <a href="mailto:zakariaqassifi10@gmail.com">zakariaqassifi10@gmail.com</a></li>
+                  <li><span aria-hidden="true">→</span> Phone: <a href="tel:+212633008210">+212 633-008210</a></li>
+                  <li><span aria-hidden="true">→</span> GitHub: <a href="https://github.com/ZakariaQassifi" target="_blank" rel="noopener">ZakariaQassifi</a></li>
+                  <li><span aria-hidden="true">→</span> LinkedIn: <a href="https://www.linkedin.com/in/zakaria-qassifi-87874b286/" target="_blank" rel="noopener">Zakaria Qassifi</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <form id="zexter-form" class="chat-form" onsubmit="handleZexterMessage(event);">
+            <div class="chat-input-wrap">
+              <label class="chat-prompt" for="zexter-input">you@guest:~$</label>
+              <input type="text" id="zexter-input" placeholder="Type your message..." autocomplete="off" required>
+            </div>
+            <button type="submit" class="btn btn-accent btn-send">send_message.sh<span class="caret">▌</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CV MODAL -->
+  <div class="modal-overlay" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="modal-slab">
+      <div class="modal-head">
+        <h3 id="cvModalTitle">Zakaria Qassifi — Curriculum Vitae</h3>
+        <button type="button" class="modal-close" onclick="closeCVModal()" aria-label="Close preview">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>The full CV opens in Google Drive. You can preview it there or download the PDF.</p>
+      </div>
+      <div class="modal-foot">
+        <button type="button" class="btn btn-outline" onclick="closeCVModal()">Close</button>
+        <a href="https://drive.google.com/file/d/1d2JrkwEzrgoBTX2S1y0DBKIte9YKmWaO/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-accent">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-wordmark" aria-hidden="true">ZAKARIA<span>.</span>QASSIFI</p>
+    <p>© 2026 Zakaria Qassifi — built with HTML, CSS &amp; JavaScript. No frameworks harmed.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
