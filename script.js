@@ -192,9 +192,9 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
 
   function buildThemePalette() {
     const verseColors = isLightMode()
-      ? ['#0e9d68', '#2e7fce', '#b47c0e']
-      : ['#34d399', '#60a5fa', '#e8c268'];
+      ? ['#2563eb', '#0891b2', '#b47c0e']
 
+      : ['#3b82f6', '#22d3ee', '#e8c268'];
     palette = isLightMode()
       ? { trail: '14, 157, 104', verse: verseColors, veil: '246, 243, 236' }
       : { trail: '52, 211, 153', verse: verseColors, veil: '18, 22, 31' };
