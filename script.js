@@ -382,3 +382,107 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
     });
   });
 })();
+
+/* ---------- MICRO-INTERACTIONS ---------- */
+(() => {
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const canHover = () => finePointer.matches && !reducedMotion.matches;
+
+  /* stagger indices for scroll-reveal children */
+  document.querySelectorAll('.reveal').forEach((section) => {
+    section.querySelectorAll(
+      '.section-head > *, .card, .hero-text > *, .hero-visual, .contact-terminal'
+    ).forEach((el, i) => {
+      el.classList.add('stagger');
+      el.style.setProperty('--i', i);
+    });
+  });
+
+  /* scroll progress bar (rAF-throttled) */
+  const progress = document.querySelector('.scroll-progress');
+  if (progress) {
+    let ticking = false;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      progress.style.transform = `scaleX(${p.toFixed(4)})`;
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  }
+
+  /* card tilt follows the pointer (transform-only, CSS-var driven) */
+  if (canHover()) {
+    document.querySelectorAll('.card').forEach((card) => {
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty('--ry', `${(px * 3).toFixed(2)}deg`);
+        card.style.setProperty('--rx', `${(py * -3).toFixed(2)}deg`);
+      }, { passive: true });
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+
+    /* magnetic hero buttons */
+    document.querySelectorAll('.hero-actions .btn').forEach((btn) => {
+      btn.addEventListener('pointermove', (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width - 0.5) * 10;
+        const y = ((e.clientY - r.top) / r.height - 0.5) * 8;
+        btn.style.setProperty('--mag-x', `${x.toFixed(1)}px`);
+        btn.style.setProperty('--mag-y', `${y.toFixed(1)}px`);
+      }, { passive: true });
+      btn.addEventListener('pointerleave', () => {
+        btn.style.setProperty('--mag-x', '0px');
+        btn.style.setProperty('--mag-y', '0px');
+      });
+    });
+  }
+
+  /* scrollspy: highlight the nav link of the section in view */
+  const navLinks = new Map();
+  document.querySelectorAll('.site-nav a').forEach((a) => {
+    if (a.hash) navLinks.set(a.hash.slice(1), a);
+  });
+  if (navLinks.size > 0) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const link = navLinks.get(entry.target.id);
+        if (!link || link.classList.contains('is-active')) return;
+        navLinks.forEach((l) => l.classList.remove('is-active'));
+        link.classList.add('is-active');
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    navLinks.forEach((_, id) => {
+      const section = document.getElementById(id);
+      if (section) spy.observe(section);
+    });
+  }
+
+  /* footer wordmark: split into letters for a hover wave */
+  const wordmark = document.querySelector('.footer-wordmark');
+  if (wordmark) {
+    const text = wordmark.textContent;
+    wordmark.textContent = '';
+    [...text].forEach((ch, i) => {
+      const span = document.createElement('span');
+      span.className = 'w-letter';
+      span.textContent = ch;
+      span.style.setProperty('--li', i);
+      if (ch === '.') span.classList.add('w-dot');
+      wordmark.appendChild(span);
+    });
+  }
+})();

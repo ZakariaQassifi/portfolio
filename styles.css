@@ -557,6 +557,7 @@ section {
   background: var(--green);
   color: var(--on-ink);
   transform: rotate(-5deg);
+  animation: sticker-float 4.2s ease-in-out infinite alternate;
 }
 
 .sticker-blue {
@@ -565,6 +566,13 @@ section {
   background: var(--blue);
   color: var(--on-ink);
   transform: rotate(4deg);
+  animation: sticker-float 4.2s ease-in-out -2.1s infinite alternate;
+}
+
+.portrait { transition: transform 0.35s var(--ease); }
+
+.hero-portrait:hover .portrait {
+  transform: rotate(-0.8deg) scale(1.02);
 }
 
 /* ---------- MARQUEE ---------- */
@@ -630,9 +638,13 @@ section {
 }
 
 .card:hover {
-  transform: translate(-3px, -3px);
+  transform: perspective(900px) translate(-3px, -3px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   box-shadow: var(--card-shadow-hover);
 }
+
+.card:hover .dot-red { animation: dot-nudge 0.35s var(--ease) infinite alternate; }
+.card:hover .dot-yellow { animation: dot-nudge 0.35s var(--ease) 0.12s infinite alternate; }
+.card:hover .dot-green { animation: dot-nudge 0.35s var(--ease) 0.24s infinite alternate; }
 
 .terminal-head {
   display: flex;
@@ -740,6 +752,14 @@ section {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--head);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s, color 0.15s;
+}
+
+.tag:hover {
+  transform: translate(-2px, -2px);
+  background: var(--green);
+  color: var(--on-ink);
+  box-shadow: 4px 4px 0 0 var(--line);
 }
 
 .tag-link { padding: 0; background: var(--green); }
@@ -1020,7 +1040,7 @@ body.light-mode .modal-overlay { background: rgba(16, 20, 28, 0.5); }
   text-shadow: 3px 3px 0 color-mix(in srgb, var(--green) 60%, var(--grid-line));
 }
 
-.footer-wordmark span { color: var(--green); }
+.footer-wordmark .w-dot { color: var(--green); }
 
 .site-footer p:last-child {
   font-family: var(--font-mono);
@@ -1047,6 +1067,67 @@ body.light-mode .modal-overlay { background: rgba(16, 20, 28, 0.5); }
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+/* ---------- SCROLL PROGRESS ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 150;
+  width: 100%;
+  height: 3px;
+  background: var(--green);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* ---------- MAGNETIC HERO BUTTONS ---------- */
+.hero-actions .btn-outline:hover,
+.hero-actions .btn-accent:hover {
+  transform: translate(calc(var(--mag-x, 0px) - 2px), calc(var(--mag-y, 0px) - 2px));
+}
+
+/* ---------- SCROLLSPY ---------- */
+.site-nav a.is-active {
+  color: var(--head);
+  border-color: var(--line);
+  background: var(--panel-1);
+  box-shadow: var(--off-sm) var(--off-sm) 0 0 var(--line);
+}
+
+/* ---------- STAGGERED REVEAL CHILDREN ---------- */
+.reveal.visible .stagger {
+  animation: stagger-rise 0.55s var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * 65ms);
+}
+
+/* ---------- FOOTER WORDMARK WAVE ---------- */
+.footer-wordmark .w-letter {
+  display: inline-block;
+  transition: transform 0.3s var(--ease), color 0.3s;
+  transition-delay: calc(var(--li, 0) * 22ms);
+}
+
+.footer-wordmark:hover .w-letter {
+  transform: translateY(-0.14em);
+  color: var(--green);
+}
+
+/* ---------- KEYFRAMES (MICRO) ---------- */
+@keyframes dot-nudge {
+  to { transform: translateY(-3px); }
+}
+
+@keyframes sticker-float {
+  from { translate: 0 0; }
+  to { translate: 0 -7px; }
+}
+
+@keyframes stagger-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
 }
 
 /* ---------- RESPONSIVE ---------- */
